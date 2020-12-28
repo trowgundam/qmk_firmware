@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "quantum.h"
 
 enum ctrl_keycodes {
     U_T_AUTO = SAFE_RANGE, //USB Extra Port Toggle Auto Detect / Always Active
@@ -128,3 +129,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return true; //Process all other keycodes normally
     }
 }
+
+#ifdef RGB_MATRIX_ENABLE
+void rgb_matrix_indicators_user(void) {
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(0, 0xFF, 0x00, 0x00);
+    }
+
+    if (host_keyboard_led_state().scroll_lock) {
+        rgb_matrix_set_color(14, 0x00, 0xFF, 0x00);
+    }
+}
+#endif
