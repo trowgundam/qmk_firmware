@@ -2,6 +2,7 @@
 .dep
 *.o
 *.bin
+!applet-mdflash.bin
 *.eep
 *.elf
 *.hex
