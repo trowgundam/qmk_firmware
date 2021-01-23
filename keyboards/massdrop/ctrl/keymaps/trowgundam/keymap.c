@@ -11,7 +11,7 @@ enum ctrl_keycodes {
     MD_BOOT,               //Restart into bootloader after hold timeout
 };
 
-keymap_config_t keymap_config;
+//keymap_config_t keymap_config;
 
 #define MT_CTESC    LCTL_T(KC_ESC)
 
